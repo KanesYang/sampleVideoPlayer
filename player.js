@@ -1,4 +1,5 @@
 var video = document.getElementById('video');
+var videoScreen = document.getElementById('video-container');
 var playButton = document.getElementById('play-button');
 var pbar = document.getElementById('pbar');
 var pbarContainer = document.getElementById('pbar-container');
@@ -28,6 +29,8 @@ window.addEventListener('load', function () {
         fullscreenButton.addEventListener('click', fullscreen, false);
         
         screenButton.addEventListener('click', playOrPause, false);
+        
+        videoScreen.addEventListener('click', playOrPause, false);
 
         updatePlayer();
 
@@ -66,6 +69,7 @@ function updatePlayer() {
         console.log('End');
         window.clearInterval(update);
         playButton.src = 'src/replay.png';
+        pauseScreen.style.display = 'block';
         screenButton.src = 'src/replay.png';
     } else if (video.paused) {
         screenButton.src = 'src/play.png';
