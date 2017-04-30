@@ -7,7 +7,6 @@
 #player {
     background-color: rgb(30, 30, 30);
     display: inline-block;
-    
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -22,18 +21,21 @@ img:hover {
     background-color: rgb(50, 170, 220);
 }
 
-img, #pbar-container, #sbar-container {
+img,
+#pbar-container,
+#sbar-container {
     cursor: pointer;
 }
+
 
 /*
 the container
 */
 
-
 #video-container {
     width: 640px;
     height: 360px;
+    position: relative;
 }
 
 video {
@@ -49,15 +51,15 @@ video {
 
 #pbar {
     height: 5px;
-    width: 50%;
+    width: 0%;
     background-color: rgb(50, 170, 220);
 }
 
 #button-container {
-    height: 50px;    
+    height: 50px;
 }
 
-#button-container > * {
+#button-container>* {
     display: inline-block;
     height: 100%;
     vertical-align: middle;
@@ -65,12 +67,14 @@ video {
 }
 
 #time-field {
-    color:rgb(50, 70, 220);
+    color: rgb(50, 70, 220);
     line-height: 50px;
     cursor: default;
 }
 
 #sbar-container {
+    padding: 2px;
+    background-color: rgb(50, 50, 50);
     width: 100px;
     height: 5px;
 }
@@ -81,10 +85,38 @@ video {
 
 #sbar {
     height: 100%;
-    width: 50%;
+    width: 100%;
     background-color: rgb(50, 170, 220);
 }
 
 #fullscreen-button {
-   float: right;
+    float: right;
+}
+
+#screen {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    line-height: 360px;
+    position: absolute;
+    z-index: 1 !important;
+    
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.65) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(100%, rgba(0, 0, 0, 0.65)));
+    /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.65) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.65) 100%);
+    /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.65) 100%);
+    /* IE10+ */
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.65) 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+#screen img {
+    vertical-align: middle;
 }

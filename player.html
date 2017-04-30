@@ -10,7 +10,12 @@
 <body>
     <div id="player">
         <div id="video-container">
-            <video poster="src/thumbnail.png">
+            
+            <div id="screen">
+                <img id="screen-button" src="src/play.png">
+            </div>
+            
+            <video poster="src/thumbnail.png" id="video">
                 <source src="src/sample.mp4">
                 It seems your broswer doesn't support this video
             </video>
@@ -36,6 +41,7 @@
 
     </div>
 
+    <script src="player.js"></script>
 </body>
 
 </html>
